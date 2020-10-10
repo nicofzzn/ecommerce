@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicofzzn/ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicofzzn/ecommerce/issues"
+  },
+  "homepage": "https://github.com/nicofzzn/ecommerce#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
