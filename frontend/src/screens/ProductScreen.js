@@ -5,7 +5,10 @@ import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listProductDetails } from '../actions/productActions'
+import {
+  listProductDetails,
+  cleanProductDetails,
+} from '../actions/productActions'
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1)
@@ -16,6 +19,10 @@ const ProductScreen = ({ history, match }) => {
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
+
+    return () => {
+      dispatch(cleanProductDetails())
+    }
   }, [dispatch, match.params.id])
 
   const addToCartHandler = () => {

@@ -5,6 +5,7 @@ import {
   PRODUCT_DETAILS_FAIL,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_REQUEST,
+  PRODUCT_DETAILS_CLEANUP,
 } from '../constants/productConstants'
 
 export const productListReducer = (state = { products: [] }, action) => {
@@ -31,6 +32,8 @@ export const productDetailsReducer = (
       return { loading: false, product: action.payload }
     case PRODUCT_DETAILS_FAIL:
       return { loading: false, error: action.payload }
+    case PRODUCT_DETAILS_CLEANUP:
+      return { loading: false, product: {} }
     default:
       return state
   }

@@ -6,6 +6,7 @@ import {
   PRODUCT_DETAILS_FAIL,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_REQUEST,
+  PRODUCT_DETAILS_CLEANUP,
 } from '../constants/productConstants'
 
 export const listProducts = () => async dispatch => {
@@ -42,4 +43,10 @@ export const listProductDetails = id => async dispatch => {
           : error.message,
     })
   }
+}
+
+export const cleanProductDetails = () => async dispatch => {
+  try {
+    dispatch({ type: PRODUCT_DETAILS_CLEANUP })
+  } catch (error) {}
 }
